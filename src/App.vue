@@ -3,10 +3,32 @@
     <div id="nav">
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>
+      <Account></Account>
     </div>
     <router-view/>
   </div>
 </template>
+<script lang="ts">
+import { Component, Vue } from 'vue-property-decorator';
+import Account from '@/components/Account.vue';
+import auth from './classes/auth';
+
+
+
+@Component({
+  components: {Account}
+})
+export default class App extends Vue {
+ 
+  user = auth.auth.user;
+
+  // created(){
+    
+  // }
+
+}
+</script>
+
 
 <style lang="scss">
 #app {
